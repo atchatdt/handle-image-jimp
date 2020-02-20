@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Upload File</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <%= typeof msg != 'undefined' ? msg : '' %>
+        <h3>Single file</h3>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="" autocomplete="off">
+            <button class="btn btn-primary">Uploads</button>
+        </form>
+        <h3>Multiple file</h3>
+        <form action="/uploads" method="POST" enctype="multipart/form-data">
+            <input type="file" name="files" multiple autocomplete="off">
+            <button class="btn btn-primary">Uploads</button>
+        </form>
+
+        <!-- <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img"> -->
+
+        <%- typeof resultImg != 'undefined'? resultImg :'' %>
+        <%- typeof file != 'undefined'? file :'' %>
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
